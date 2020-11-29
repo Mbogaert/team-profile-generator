@@ -1,0 +1,30 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "team profile generator that will generate a webpage with team memeber and a github link & email link",
+  "main": "Index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mbogaert/team-profile-generator.git"
+  },
+  "keywords": [
+    "team",
+    "profile",
+    "generator"
+  ],
+  "author": "Mathew Bogaert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mbogaert/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/Mbogaert/team-profile-generator#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
