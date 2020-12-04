@@ -14,13 +14,31 @@ test('set name via constructor', () => {
 });
 
 test('set id via constructor', () => {
-    const id = 100;
-    const employee = new Employee('Mathew', 100);
+    const id = 999;
+    const employee = new Employee('Mathew', 999);
     expect(employee.id).toBe(id);
+});
+
+test('set email via constructor', () => {
+    const email = 'bogaert@email.arizona.edu';
+    const employee = new Employee('Mathew', 999, 'bogaert@email.arizona.edu');
+    expect(employee.email).toBe(email);
 });
 
 test('get name using getName()', () => {
     const getName = 'Mathew';
-    const employee = new Employee(getName);
+    const employee = new Employee('Mathew');
     expect(employee.getName()).toBe(getName);
-})
+});
+
+test('get id using getId()', () => {
+    const getId = 999;
+    const employee = new Employee('Mathew', 999);
+    expect(employee.getId()).toBe(getId);
+});
+
+test('get email via getEmail()', () => {
+    const getEmail = 'bogaert@email.arizona.edu';
+    const employee = new Employee('Mathew', 999, 'bogaert@email.arizona.edu');
+    expect(employee.getEmail()).toBe(getEmail);
+});
