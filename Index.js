@@ -1,1 +1,1 @@
-// index file
+const inquirer = require('inquirer');
