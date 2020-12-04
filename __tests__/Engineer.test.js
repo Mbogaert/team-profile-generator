@@ -9,10 +9,10 @@ test('set github username via constructor', () => {
 
 test('get github via getGithub()', () => {
     const getGithub = 'Mbogaert';
-    const engineer= new Engineer('Mathew', 999, 'bogaert@email.arizona.edu', 'Mbogaert');
+    const engineer = new Engineer('Mathew', 999, 'bogaert@email.arizona.edu', 'Mbogaert');
     expect(engineer.getGithub()).toBe(getGithub);
 });
-test('return Engineer, override Engineer, via getRole()', () => {
+test('return Engineer, override Employee, via getRole()', () => {
     const engineer = new Engineer('Mathew', 999, 'bogaert@email.arizona.edu', 'Mbogaert');
     expect(engineer.getRole()).toBe('Engineer');
 });
