@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
+const fs = require("fs");
 
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const { create } = require('domain');
 
 // consider adding validations in the future
 
@@ -113,20 +115,62 @@ function runEmployeeCreationLoop() {
             }
         })
         .then((employee) => {
+            console.log("working");
             if (employee) {
                 employees.push(employee);
-                return runEmployeeCreationLoop();
+                writeEmployeeHtml(employee)
+                .then(() => {
+                    return runEmployeeCreationLoop();
+                })
             }
         })
 }
 
-function createHTML () {
+function writeHtmlBeginning() {
+    const html = `<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>My Team Generator</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light justify-content-center" style="background-color:red; height: 150px;">
+        <!-- Navbar content -->
+        <span class="h1" style="color: white">My Team</span>
+    </nav>`
+    
+    return new Promise((resolve, reject) => {
+        fs.writeFile("./dist/index.html", html, err => {
+            // if there's an error, reject the Promise and send the error to the Promise's "catch()" method
+            if (err) {
+                reject(err);
+                // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+                return;
+            }
+
+            // if everything went well, resolve the Promise and send the successful data to the ".then()" method
+            resolve({
+                ok: true,
+                message: "File Created!"
+            });
+        });
+    });
+};
+
+function writeEmployeeHtml() {
+    console.log("working");
 }
 
-// function that creates each employees html
+// function that creates each employees html - how do I access the object that has the array of data is it called employees?
 
 promptManager()
+    .then(() => {
+        return writeHtmlBeginning();
+    })
     .then(({ name, id, email, officeNumber }) => {
         employees.push(new Manager(name, id, email, officeNumber));
         return runEmployeeCreationLoop();
