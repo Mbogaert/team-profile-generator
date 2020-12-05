@@ -31,12 +31,6 @@ function promptManager() {
             name: 'officeNumber',
             message: 'Enter the managers office phone number'
         }
-
-        // ask to enter an intern or engineer or to finish
-
-        // ask to enter another employee - end only after this returns false
-
-        // populate the HTML with the manager, engineers and interns
     ])
 }
 
@@ -47,41 +41,63 @@ function promptEngineer() {
             // consider adding validations in the future
             type: 'input',
             name: 'name',
-            message: 'Enter the managers name'
+            message: 'Enter the engineers name'
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Enter the managers id number'
+            message: 'Enter the engineers id number'
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Enter the managers email address'
+            message: 'Enter the engineers email address'
         },
         {
             type: 'input',
-            name: 'officeNumber',
-            message: 'Enter the managers office phone number'
+            name: 'github',
+            message: 'Enter the engineers github username'
         }
-        // ask to enter an intern or engineer or to finish
+    ])
+}
 
-        // ask to enter another employee - end only after this returns false
+function promptIntern() {
 
-        // populate the HTML with the manager, engineers and interns
+    return inquirer.prompt([
+        {
+            // consider adding validations in the future
+            type: 'input',
+            name: 'name',
+            message: 'Enter the interns name'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter the interns id number'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter the interns email address'
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: 'Enter the interns school name'
+        }
     ])
 }
 
 function promptRole() {
     return inquirer.prompt(
         {
-            type: 'choices',
+            type: 'list',
             name: 'role',
-            message: 'Would you like to enter an intern, an engineer or end',
+            message: 'Would you like to enter an intern, an engineer or end?',
             choices: ['Intern', 'Engineer', 'END']
-        },
+        }
     )
-}
+};
 
 function runEmployeeCreationLoop() {
     return promptRole()
