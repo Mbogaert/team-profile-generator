@@ -8,7 +8,40 @@ const Employee = require('./lib/Employee');
 let employees = [];
 
 function promptManager() {
-    
+
+    return inquirer.prompt([
+        {
+            // consider adding validations in the future
+            type: 'input',
+            name: 'name',
+            message: 'Enter the managers name'
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: 'Enter the managers id number'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter the managers email address'
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: 'Enter the managers office phone number'
+        }
+
+        // ask to enter an intern or engineer or to finish
+
+        // ask to enter another employee - end only after this returns false
+
+        // populate the HTML with the manager, engineers and interns
+    ])
+}
+
+function promptEngineer() {
+
     return inquirer.prompt([
         {
             // consider adding validations in the future
@@ -37,13 +70,50 @@ function promptManager() {
 
         // populate the HTML with the manager, engineers and interns
     ])
-    .then(answers => {
-        employees.push(answers);
-        console.log(employees)
-    });
+}
+
+function promptRole() {
+    return inquirer.prompt(
+        {
+            type: 'choices',
+            name: 'role',
+            message: 'Would you like to enter an intern, an engineer or end',
+            choices: ['Intern', 'Engineer', 'END']
+        },
+    )
+}
+
+function runEmployeeCreationLoop() {
+    return promptRole()
+        .then(({ role }) => {
+            if (role === 'Intern') {
+                return promptIntern()
+                    .then(({ name, id, email, school }) => new Intern(name, id, email, school))
+            }
+            else if (role === 'Engineer') {
+                return promptEngineer()
+                    .then(({ name, id, email, github }) => new Engineer(name, id, email, github))
+            }
+            else {
+                return null;
+            }
+        })
+        .then((employee) => {
+            if (employee) {
+                employees.push(employee);
+                return runEmployeeCreationLoop();
+            }
+        })
 }
 
 // function that creates an HTML file for overall page
 // function that creates each employees html
 
 promptManager()
+    .then(({ name, id, email, officeNumber }) => {
+        employees.push(new Manager(name, id, email, officeNumber));
+        return runEmployeeCreationLoop();
+    })
+    .then(() => {
+        console.log(employees)
+    }) 
