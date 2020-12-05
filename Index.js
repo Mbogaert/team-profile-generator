@@ -3,7 +3,8 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const Employee = require('./lib/Employee');
+
+// consider adding validations in the future
 
 let employees = [];
 
@@ -11,7 +12,6 @@ function promptManager() {
 
     return inquirer.prompt([
         {
-            // consider adding validations in the future
             type: 'input',
             name: 'name',
             message: 'Enter the managers name'
@@ -38,7 +38,6 @@ function promptEngineer() {
 
     return inquirer.prompt([
         {
-            // consider adding validations in the future
             type: 'input',
             name: 'name',
             message: 'Enter the engineers name'
@@ -65,7 +64,6 @@ function promptIntern() {
 
     return inquirer.prompt([
         {
-            // consider adding validations in the future
             type: 'input',
             name: 'name',
             message: 'Enter the interns name'
@@ -122,7 +120,10 @@ function runEmployeeCreationLoop() {
         })
 }
 
-// function that creates an HTML file for overall page
+function createHTML () {
+
+}
+
 // function that creates each employees html
 
 promptManager()
