@@ -21,7 +21,7 @@ function promptManager() {
                     return true;
                 } else {
                     console.log('Please enter a name!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -34,7 +34,7 @@ function promptManager() {
                     return true;
                 } else {
                     console.log('Please enter an ID!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -47,7 +47,7 @@ function promptManager() {
                     return true;
                 } else {
                     console.log('Please enter an email!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -60,7 +60,7 @@ function promptManager() {
                     return true;
                 } else {
                     console.log('Please enter an email!');
-                    return false; 
+                    return false;
                 }
             }
         }
@@ -79,7 +79,7 @@ function promptEngineer() {
                     return true;
                 } else {
                     console.log('Please enter a name!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -92,7 +92,7 @@ function promptEngineer() {
                     return true;
                 } else {
                     console.log('Please enter an ID!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -105,7 +105,7 @@ function promptEngineer() {
                     return true;
                 } else {
                     console.log('Please enter an email!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -118,7 +118,7 @@ function promptEngineer() {
                     return true;
                 } else {
                     console.log('Please enter a GitHub username!');
-                    return false; 
+                    return false;
                 }
             }
         }
@@ -137,7 +137,7 @@ function promptIntern() {
                     return true;
                 } else {
                     console.log('Please enter a name!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -150,7 +150,7 @@ function promptIntern() {
                     return true;
                 } else {
                     console.log('Please enter an ID!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -163,7 +163,7 @@ function promptIntern() {
                     return true;
                 } else {
                     console.log('Please enter an email!');
-                    return false; 
+                    return false;
                 }
             }
         },
@@ -176,7 +176,7 @@ function promptIntern() {
                     return true;
                 } else {
                     console.log('Please enter a school!');
-                    return false; 
+                    return false;
                 }
             }
         }
@@ -234,11 +234,12 @@ function writeHtml() {
     <nav class="navbar navbar-light justify-content-center" style="background-color:red; height: 150px;">
         <!-- Navbar content -->
         <span class="h1" style="color: white">My Team</span>
-    </nav>  
+    </nav> 
+    <div class="container" style="justify-content: center;"> 
     
     ${employees.map((employee) => {
         if (employee.getRole() === 'Intern') {
-            return `<div class="card" style="width: 18rem; padding: 70px 10px 10px 10px; display: inline-block">
+            return `<div class="card" style="width: 18rem; padding: 50px 10px 10px 10px; display: inline-block">
 <div class="card-header" style="background-color: blue; color: white;">
     <h5>${employee.name}</h5>
     <span class="fas fa-user-graduate"><span class="h5"> Intern </span></span>
@@ -251,9 +252,9 @@ function writeHtml() {
     </ul>
 </div>
 </div>`
-        } 
+        }
         else if (employee.getRole() === 'Engineer') {
-            return `<div class="card" style="width: 18rem; padding: 70px 10px 10px 10px; display: inline-block">
+            return `<div class="card" style="width: 18rem; padding: 50px 10px 10px 10px; display: inline-block">
             <div class="card-header" style="background-color: blue; color: white;">
                 <h5>${employee.name}</h5>
                 <span class="fas fa-glasses"><span class="h5"> Engineer </span></span>
@@ -266,9 +267,9 @@ function writeHtml() {
                 </ul>
             </div>
         </div>`
-        } 
+        }
         else if (employee.getRole() === 'Manager') {
-            return `<div class="card" style="width: 18rem; padding: 70px 10px 10px 10px; display: inline-block">
+            return `<div class="card" style="width: 18rem; padding: 50px 10px 10px 10px; display: inline-block">
             <div class="card-header" style="background-color: blue; color: white;">
                 <h5>${employee.name}</h5>
                 <span class="fas fa-mug-hot"><span class="h5"> Manager</span></span>
@@ -282,7 +283,7 @@ function writeHtml() {
             </div>
         </div>`;
         }
-    }) .join( '' )}
+    }).join('')}
     </body>
 
 </html>`
