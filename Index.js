@@ -129,6 +129,8 @@ function writeHtml() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <title>My Team Generator</title>
 </head>
 
@@ -143,7 +145,7 @@ function writeHtml() {
             return `<div class="card" style="width: 18rem; padding: 70px 10px 10px 10px; display: inline-block">
 <div class="card-header" style="background-color: blue; color: white;">
     <h5>${employee.name}</h5>
-    <h5> Intern </h5>
+    <span class="fas fa-user-graduate"><span class="h5"> Intern </span></span>
 </div>
 <div class="card-body">
     <ul class="list-group list-group-flush">
@@ -158,7 +160,7 @@ function writeHtml() {
             return `<div class="card" style="width: 18rem; padding: 70px 10px 10px 10px; display: inline-block">
             <div class="card-header" style="background-color: blue; color: white;">
                 <h5>${employee.name}</h5>
-                <h5> Engineer </h5>
+                <span class="fas fa-glasses"><span class="h5"> Engineer </span></span>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -173,7 +175,7 @@ function writeHtml() {
             return `<div class="card" style="width: 18rem; padding: 70px 10px 10px 10px; display: inline-block">
             <div class="card-header" style="background-color: blue; color: white;">
                 <h5>${employee.name}</h5>
-                <h5> Manager </h5>
+                <span class="fas fa-mug-hot"><span class="h5"> Manager</span></span>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
