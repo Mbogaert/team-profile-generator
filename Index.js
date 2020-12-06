@@ -15,22 +15,54 @@ function promptManager() {
         {
             type: 'input',
             name: 'name',
-            message: 'Enter the managers name'
+            message: 'Enter the managers name',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a name!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Enter the managers id number'
+            message: 'Enter the managers id number',
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an ID!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Enter the managers email address'
+            message: 'Enter the managers email address',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an email!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'officeNumber',
-            message: 'Enter the managers office phone number'
+            message: 'Enter the managers office phone number',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an email!');
+                    return false; 
+                }
+            }
         }
     ])
 }
@@ -41,22 +73,54 @@ function promptEngineer() {
         {
             type: 'input',
             name: 'name',
-            message: 'Enter the engineers name'
+            message: 'Enter the engineers name',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a name!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Enter the engineers id number'
+            message: 'Enter the engineers id number',
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an ID!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Enter the engineers email address'
+            message: 'Enter the engineers email address',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an email!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'github',
-            message: 'Enter the engineers github username'
+            message: 'Enter the engineers github username',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a GitHub username!');
+                    return false; 
+                }
+            }
         }
     ])
 }
@@ -67,22 +131,54 @@ function promptIntern() {
         {
             type: 'input',
             name: 'name',
-            message: 'Enter the interns name'
+            message: 'Enter the interns name',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a name!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Enter the interns id number'
+            message: 'Enter the interns id number',
+            validate: idInput => {
+                if (idInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an ID!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Enter the interns email address'
+            message: 'Enter the interns email address',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Please enter an email!');
+                    return false; 
+                }
+            }
         },
         {
             type: 'input',
             name: 'school',
-            message: 'Enter the interns school name'
+            message: 'Enter the interns school name',
+            validate: schoolInput => {
+                if (schoolInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a school!');
+                    return false; 
+                }
+            }
         }
     ])
 }
@@ -204,5 +300,6 @@ promptManager()
         return runEmployeeCreationLoop();
     })
     .then(() => {
+        console.log("Your newly create HTML file is now in the dist folder!")
         writeHtml();
     }) 
