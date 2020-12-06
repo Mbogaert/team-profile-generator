@@ -230,19 +230,20 @@ function writeHtml() {
     <title>My Team Generator</title>
 </head>
 
-<body>
+<body style="font-family: sans-serif;">
     <nav class="navbar navbar-light justify-content-center" style="background-color:red; height: 150px;">
         <!-- Navbar content -->
         <span class="h1" style="color: white">My Team</span>
     </nav> 
-    <div class="container" style="justify-content: center;"> 
+    <div class="container"> 
+        <div class="row" style="justify-content: center;"> 
     
     ${employees.map((employee) => {
         if (employee.getRole() === 'Intern') {
-            return `<div class="card" style="width: 18rem; padding: 50px 10px 10px 10px; display: inline-block">
+            return `<div class="card" style="width: 18rem; margin: 50px 6px 0 6px; display: inline-block">
 <div class="card-header" style="background-color: blue; color: white;">
     <h5>${employee.name}</h5>
-    <span class="fas fa-user-graduate"><span class="h5"> Intern </span></span>
+    <span class="fas fa-user-graduate"><span class="h5" style="font-family: sans-serif;"> Intern </span></span>
 </div>
 <div class="card-body">
     <ul class="list-group list-group-flush">
@@ -254,10 +255,10 @@ function writeHtml() {
 </div>`
         }
         else if (employee.getRole() === 'Engineer') {
-            return `<div class="card" style="width: 18rem; padding: 50px 10px 10px 10px; display: inline-block">
+            return `<div class="card" style="width: 18rem; margin: 50px 6px 0 6px; display: inline-block">
             <div class="card-header" style="background-color: blue; color: white;">
                 <h5>${employee.name}</h5>
-                <span class="fas fa-glasses"><span class="h5"> Engineer </span></span>
+                <span class="fas fa-glasses"><span class="h5" style="font-family: sans-serif;"> Engineer </span></span>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
@@ -269,10 +270,10 @@ function writeHtml() {
         </div>`
         }
         else if (employee.getRole() === 'Manager') {
-            return `<div class="card" style="width: 18rem; padding: 50px 10px 10px 10px; display: inline-block">
+            return `<div class="card" style="width: 18rem; margin: 50px 6px 0 6px; display: inline-block">
             <div class="card-header" style="background-color: blue; color: white;">
                 <h5>${employee.name}</h5>
-                <span class="fas fa-mug-hot"><span class="h5"> Manager</span></span>
+                <span class="fas fa-mug-hot"><span class="h5" style="font-family: sans-serif;"> Manager</span></span>
             </div>
             <div class="card-body">
                 <ul class="list-group list-group-flush">
