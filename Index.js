@@ -284,7 +284,7 @@ function writeHtml() {
             </div>
         </div>`;
         }
-    }).join('')}
+    }).join('\n\n')}
     </body>
 
 </html>`
