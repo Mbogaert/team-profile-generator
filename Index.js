@@ -5,8 +5,6 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
-// consider adding validations in the future
-
 let employees = [];
 
 function promptManager() {
@@ -236,51 +234,75 @@ function writeHtml() {
         <span class="h1" style="color: white">My Team</span>
     </nav> 
     <div class="container"> 
-        <div class="row" style="justify-content: center;"> 
+        <div class="row mt-3" style="justify-content: center;"> 
     
     ${employees.map((employee) => {
         if (employee.getRole() === 'Intern') {
-            return `<div class="card" style="width: 18rem; margin: 50px 6px 0 6px; display: inline-block">
-<div class="card-header" style="background-color: blue; color: white;">
-    <h5>${employee.name}</h5>
-    <span class="fas fa-user-graduate"><span class="h5" style="font-family: sans-serif;"> Intern </span></span>
-</div>
-<div class="card-body">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item card-text">ID: ${employee.id}</li>
-        <li class="list-group-item">Email: <a href= "mailto:${employee.email}" target="_blank">${employee.email}</a> </li>
-        <li class="list-group-item">School: ${employee.school} </li>
-    </ul>
-</div>
-</div>`
+            return `<div class="col-auto">
+            <div class="card bg-light my-3">
+                    <div class="card-header" style="background-color: blue; color: white;">
+                    <h3>
+                    ${employee.name}
+                    </h3>
+                    <h4>
+                    <span class="fas fa-user-graduate"></span>
+                    Intern </span>
+                    </h4>
+            </div>
+
+            <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item card-text">ID: ${employee.id}</li>
+                <li class="list-group-item">Email: <a href= "mailto:${employee.email}" target="_blank">${employee.email}</a> </li>
+                <li class="list-group-item">School: ${employee.school} </li>
+            </ul>
+            </div>
+        </div>
+    </div>`
         }
         else if (employee.getRole() === 'Engineer') {
-            return `<div class="card" style="width: 18rem; margin: 50px 6px 0 6px; display: inline-block">
-            <div class="card-header" style="background-color: blue; color: white;">
-                <h5>${employee.name}</h5>
-                <span class="fas fa-glasses"><span class="h5" style="font-family: sans-serif;"> Engineer </span></span>
+            return `<div class="col-auto">
+            <div class="card bg-light my-3">
+                    <div class="card-header" style="background-color: blue; color: white;">
+                    <h3>
+                    ${employee.name}
+                    </h3>
+                    <h4>
+                    <span class="fas fa-glasses"></span>
+                    Engineer </span>
+                    </h4>
             </div>
+ 
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item card-text">ID: ${employee.id}</li>
                     <li class="list-group-item">Email: <a href= "mailto:${employee.email}" target="_blank">${employee.email}</a> </li>
                     <li class="list-group-item">GitHub: <a href="https://github.com/${employee.github}"target="_blank">${employee.github}</a> </li>
                 </ul>
+                </div>
             </div>
         </div>`
         }
         else if (employee.getRole() === 'Manager') {
-            return `<div class="card" style="width: 18rem; margin: 50px 6px 0 6px; display: inline-block">
-            <div class="card-header" style="background-color: blue; color: white;">
-                <h5>${employee.name}</h5>
-                <span class="fas fa-mug-hot"><span class="h5" style="font-family: sans-serif;"> Manager</span></span>
+            return `<div class="col-auto">
+            <div class="card bg-light my-3">
+                    <div class="card-header" style="background-color: blue; color: white;">
+                    <h3>
+                    ${employee.name}
+                    </h3>
+                    <h4>
+                    <span class="fas fa-mug-hot"></span>
+                    Manager </span>
+                    </h4>
             </div>
+
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item card-text">ID: ${employee.id}</li>
                     <li class="list-group-item">Email: <a href= "mailto:${employee.email}" target="_blank">${employee.email}</a> </li>
                     <li class="list-group-item">Office Number: ${employee.officeNumber} </li>
                 </ul>
+                </div>
             </div>
         </div>`;
         }
