@@ -1,7 +1,7 @@
   # Team Profile Generator
 
   ## Description
-  This is a team member generator.
+  This is a generator that creates a webpage with the inputted team information.
   
   ## Table of Contents:
   * [Description](#description)
@@ -21,8 +21,13 @@
   ## Repository
   [Repository Link](https://github.com/Mbogaert/team-profile-generator)
 
+  ## Screenshot
+  ![Screenshot of the website that is created](./images/screen-shot.png)
+
   ## Useage
   This project can be used to craft an HTML page that displays your teams Manager, Engineer and Interns.
+
+  Video on how it works: [Click Here](https://drive.google.com/file/d/1A3qQjbovW2wBl9_rtC43bjCz6lhJhMm9/view)
 
   ## Contributions
   Made with Pride by Mathew Bogaert
